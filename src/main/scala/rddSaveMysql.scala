@@ -43,6 +43,7 @@ object rddSaveMysql extends App {
   properties.put("password", "your_mysql_password")
 
   // db column은 fields에서 정의
+  // jdbc driver 설치 필요
   dataFrame.write.mode(SaveMode.Append).jdbc("jdbc:mysql://localhost:3306/dbtest", "test", properties)
 
   println("Dataframe Save to MySQL!")
